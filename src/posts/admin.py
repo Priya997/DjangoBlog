@@ -7,6 +7,7 @@ class PostModelAdmin(admin.ModelAdmin):
 	list_display=["title","updated","timestamp"]
 	# to show the link on updated
 	list_display_links=["updated"]
+	# To edit the title in the admin panel
 	list_editable=['title']
 	# to add filter
 	list_filter=["updated","timestamp"]

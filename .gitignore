@@ -1,4 +1,5 @@
 src/django21sublime-project
 src/django21sublime-project.sublime-workspace
 src/posts/__pycache__/*
+src/django21/__pycache__/*
 
