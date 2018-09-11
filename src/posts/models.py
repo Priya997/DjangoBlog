@@ -10,6 +10,10 @@ class Post(models.Model):
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 
+	# if using python 2
+	def __uniode__(self):
+		return self.title
 
+	# if using python 3
 	def __str__(self):
 		return self.title
