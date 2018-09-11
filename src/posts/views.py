@@ -12,10 +12,16 @@ def post_create(request):
 #Need to wrap it and map it with url to use it
 
 def post_detail(request): #retrieve
-	return HttpResponse("<h1>Detail</h1>")
+	context={"title":"Detail"}
+	return render(request,"index.html",context)
 
 def post_list(request): #list items
-	return render(request,"index.html",{})
+	context={"title":"list"}
+	# if request.user.is_authenticated:
+	# 	context={"title":"my user list"}
+	# else:
+	# 	context={"title":"List"}
+	return render(request,"index.html",context)
 
 def post_update(request):
 	return HttpResponse("<h1>Update</h1>")
