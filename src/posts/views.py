@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render
 # Create your views here.
 
 
@@ -14,7 +15,7 @@ def post_detail(request): #retrieve
 	return HttpResponse("<h1>Detail</h1>")
 
 def post_list(request): #list items
-	return HttpResponse("<h1>List</h1>")
+	return render(request,"index.html",{})
 
 def post_update(request):
 	return HttpResponse("<h1>Update</h1>")
