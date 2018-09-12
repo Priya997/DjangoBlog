@@ -4,11 +4,22 @@ from django.shortcuts import render,get_object_or_404
 from .models import Post
 # Create your views here.
 
-
+from .form import PostForm
 # I am using function based view as it is same as python function
 
+
 def post_create(request):
-	return HttpResponse("<h1>Create</h1>")
+	form=PostForm(request.POST or None)
+	if form.is_valid():
+		instance=form.save(commit=False)
+		instance.save()
+	# if request.method=="POST":
+	# 	print(request.POST.get("content"))
+	# 	print(request.POST.get("title"))
+	context={"form":form,}
+	return render(request,"post_form.html",context)
+
+
 
 #Need to wrap it and map it with url to use it
 
