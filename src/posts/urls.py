@@ -11,7 +11,7 @@ urlpatterns = [
 
 	url('^$', post_view.post_list),
     url('^create/$', post_view.post_create),
-    url('^detail/$', post_view.post_detail),
+    url('^(?P<id>\d+)/$', post_view.post_detail),
     url('^update/$', post_view.post_update),
     url('^delete/$', post_view.post_delete),
 
