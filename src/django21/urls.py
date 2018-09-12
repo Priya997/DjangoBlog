@@ -21,7 +21,7 @@ from posts import urls as post_url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('posts/', include(post_url)),]
+    url('posts/', include(post_url,namespace='posts')),]
 
     # This method is depreceated after django 1.9 don't use it 
     #url('posts/',"posts.views.post_home")

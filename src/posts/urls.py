@@ -3,6 +3,8 @@ from django.conf.urls import url
 from django.urls import path
 from posts import views as post_view
 from . import views
+
+app_name='posts'
 urlpatterns = [
 
 #The order of url does matter as if we have
@@ -11,7 +13,7 @@ urlpatterns = [
 
 	url('^$', post_view.post_list),
     url('^create/$', post_view.post_create),
-    url('^(?P<id>\d+)/$', post_view.post_detail),
+    url('^(?P<id>\d+)/$', post_view.post_detail,name='detail'),
     url('^update/$', post_view.post_update),
     url('^delete/$', post_view.post_delete),
 
